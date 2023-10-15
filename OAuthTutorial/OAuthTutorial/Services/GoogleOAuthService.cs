@@ -7,7 +7,7 @@ namespace OAuthTutorial.Services
 {
     public class GoogleOAuthService
     {
-        private const string ClientId = "256288345134-nb8oj9117lqv6m1ucpud7kn49cokuo6q.apps.googleusercontent.com";
+        // ClientId та ClientSecret необхідно замінити на власні, отримані з Google Console.
         private const string ClientSecret = "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";
 
         private const string OAuthServerEndpoint = "https://accounts.google.com/o/oauth2/v2/auth";
@@ -17,7 +17,7 @@ namespace OAuthTutorial.Services
         {
             var queryParams = new Dictionary<string, string>
             {
-                {"client_id", ClientId},
+                { "client_id", ClientId },
                 { "redirect_uri", redirectUrl },
                 { "response_type", "code" },
                 { "scope", scope },

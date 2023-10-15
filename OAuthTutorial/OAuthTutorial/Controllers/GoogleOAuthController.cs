@@ -29,6 +29,7 @@ namespace OAuthTutorial.Controllers
         {
             var codeVerifier = HttpContext.Session.GetString(PkceSessionKey);
 
+            // Увага: токен оновлення надається лише при першій авторизації користувача! 
             var tokenResult = await GoogleOAuthService.ExchangeCodeOnTokenAsync(code, codeVerifier, RedirectUrl);
 
             var myChannelId = await YoutubeService.GetMyChannelIdAsync(tokenResult.AccessToken);
